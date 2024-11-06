@@ -13,6 +13,10 @@ def remove_special_characters(s: str) -> str:
   return re.sub(r'[-_\. ]', '', s)
 
 
+def split_text(text, max_length=3000):
+    return [text[i:i + max_length] for i in range(0, len(text), max_length)]
+
+
 if __name__ == '__main__':
   codec_test_1 = 'hola._- mundo'
   output = codec_filename(codec_test_1)
