@@ -1,5 +1,12 @@
 from collections import defaultdict
+import os
 import re
+
+
+def files_from_path(path: str):
+  for _, _, files in os.walk(path):
+    for file in files:
+      yield file
 
 
 def codec_filename(filename: str) -> str:
@@ -15,6 +22,11 @@ def remove_special_characters(s: str) -> str:
 
 def split_text(text, max_length=3000):
     return [text[i:i + max_length] for i in range(0, len(text), max_length)]
+
+
+def write_on_file(path: str, data: str):
+  with open(path, 'w', encoding='utf-8') as fwrite:
+    fwrite.write(data)
 
 
 if __name__ == '__main__':
