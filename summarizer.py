@@ -1,11 +1,13 @@
 from utils import split_text, write_on_file
 from consts import SUMMARY_PATH
+from dotenv import load_dotenv
 import openai as oai
 import os
 
 
 class Summarizer:
   def __init__(self, model='gpt-3.5-turbo'):
+    load_dotenv()
     oai.api_key = os.getenv('OPENAI_KEY')
     self.model = model
     self.context = {
