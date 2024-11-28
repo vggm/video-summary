@@ -1,6 +1,7 @@
 import whisper
 from consts import TEXTS_PATH, AUDIOS_PATH
 from utils import write_on_file
+from logger import log as print
 
 MODELS = ['tiny', 'small', 'base', 'medium', 'large', 'turbo']
 
@@ -8,6 +9,7 @@ class Transcriber:
   def __init__(self, model_type='medium'):
     self.last_transcription = ''
     self.model = whisper.load_model(model_type)
+    print("~> Transcriber Initialiced ✅")
   
   def transcribe_file(self, filename: str) -> str:
     path = AUDIOS_PATH + filename

@@ -7,3 +7,5 @@ text-from-videos/*
 !text-from-videos/VideoTest.txt
 videos-to-summary/*
 !videos-to-summary/Video Test.mp4
+summary-from-videos/*
+!summary-from-videos/VideoTest.txt

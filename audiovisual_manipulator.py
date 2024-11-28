@@ -1,10 +1,12 @@
 from moviepy.editor import VideoFileClip as VideoFile, AudioFileClip as AudioFile
 from consts import VIDEOS_PATH, AUDIOS_PATH
+from logger import log as print
 
 
 class AudiovisualManipulator:
   def __init__(self):
     self.mp4_files : list[VideoFile] = []
+    print("~> AudioVisualManipulator Initialiced ✅")
   
   def __del__(self):
     for mp4 in self.mp4_files:
